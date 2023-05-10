@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- normalize css -->
+    <link rel = "stylesheet" href = "resources/normalize.css">
+    <!-- font -->
+    <link rel = "stylesheet" href = "resources/font.css">
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+    <!-- magnific popup -->
+    <link rel = "stylesheet" href = "resources/Magnific-Popup-master/dist/magnific-popup.css">
+    <!-- owl carousel -->
+    <link rel = "stylesheet" href = "resources/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css">
+    <link rel = "stylesheet" href = "resources/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.css">
+    <!-- animate css -->
+    <link rel = "stylesheet" href = "resources/animate.css-main/animate.css">
+    <!-- custom (main) css -->
+    <link rel="stylesheet" href="css/form-utilities.css">
+    <link rel="stylesheet" href="css/form-navbar.css">
+    <link rel="stylesheet" href="css/registration-form.css">
+    <title>Safinatu | register-form</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="container flex">
+          <h1 class="logo">Safinatun-Najati</h1>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="dokoki.html">Missions</a></li>
+              <li><a href="dokoki.html">Rules</a></li>
+            </ul>
+          </nav>
+      </div>
+  </div>
+  
+  <div class="form-container">
+    <span class="big-circle"></span>
+    <img src="img/shape.png" class="square" alt="" />
+    <div class="form">
+      <div class="contact-info">
+        <h3 class="title">Membership Registration</h3>
+          <div class="information">
+            <p>Dukkan bayanan da zaki shigar a cikin wannan form; ki tabbata komai daidai ne, 
+              domin wannan Qungiya mai Albarka baza ta lamunci amfani da bayanai na karya ba. 
+            </p>
+          </div>
+        
+        
+           <img src="img/logo.jpg" class="candidate" alt="" />
+
+        <div class="info">
+      
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <span class="circle one"></span>
+        <span class="circle two"></span>
+              <form class="gform pure-form pure-form-stacked" method="POST" id="sheetdb-form" data-email="snidfoundation@gmail.com" action="https://sheetdb.io/api/v1/wjbfv3ritkaza">
+                <div class="form-elements"><br>
+                  <div><br>
+                <b class="title">Register Here!!</b>
+                
+                <div class="input-container">
+                  <b>Full Name</b>
+                 <input class="input" type="text" name="data[FULL NAME]" required="" />
+               </div>
+
+               <div class="input-container">
+                 <b>ID Number</b>
+                 <input class="input" type="text" name="data[ID NUMBER]" required="" />
+               </div>
+
+               <div class="input-container">
+                  <b>Phone</b>
+                  <input class="input" type="number"  name="data[PHONE]" required="" />
+               </div>
+
+               <div class="input-container">
+                  <b>Address</b>
+                  <input class="input" type="text"  name="data[ADDRESS]" required="" />
+               </div>
+
+               <div class="input-container">
+                  <b>Age</b>
+                  <input class="input" type="number"  name="data[AGE]" required="" />
+               </div>
+
+               <div class="input-container">
+                 <b>Occupation</b>
+                 <input class="input" type="text"  name="data[OCCUPATION]" required="" />
+               </div>
+
+               <div class="input-container">
+                <b>Qualification</b>
+                <input class="input" type="text"  name="data[QUALIFICATION]" required="" />
+               </div>
+
+               <div class="input-container">
+                <b>Marital Status</b>
+                <input class="input" type="text"  name="data[M. STATUS]" required="" />
+               </div>
+
+               <div class="input-container">
+                <b>Facebook Username</b>
+                <input class="input" type="text"  name="data[FACEBOOK USERNAME]" required="" />
+               </div>
+           
+                <button class="btn">
+                SEND</button><br>
+              </div>
+            </div>
+          </form>
+      </div>
+
+
+  
+
+     <!-- Footer -->
+     <footer class="footer bg-dark py-5">
+      <div class="container grid grid-3">
+          <div>
+              <h1>Safinatun-Najati
+              </h1>
+              <p>Copyright &copy; 2023</p>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="dokoki.html">Our Missions</a></li>
+              <li><a href="dokoki.html">Rules</a></li>
+            </ul>
+          </nav>
+          <div class="social">
+            <a href="https://www.facebook.com/profile.php?id=100083168389381">
+              <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="#"><i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="#"><i class="fab fa-twitter fa-2x"></i>
+            </a>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+    var form = document.getElementById('sheetdb-form');
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  fetch(form.action, {
+      method : "POST",
+      body: new FormData(document.getElementById("sheetdb-form")),
+  }).then(
+      response => response.json()
+  ).then((html) => {
+    // you can put any JS code here
+    window.open('success.html', '_blank');
+
+  });
+});
+   </script>
+</body>
+</html>
